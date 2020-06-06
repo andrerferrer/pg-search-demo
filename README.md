@@ -31,14 +31,7 @@ This is the schema
 
 ## What needs to be done?
 
-We need to rename the reference in the migration:
-```ruby
-  t.references :owner, null: false, foreign_key: { to_table: :users }
-```
+### 1. Add the gem
 
-We need to rename the reference in the model:
-```ruby
-  belongs_to :owner, class_name: 'User'
-```
 
 And we're good to go 🤓
