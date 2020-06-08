@@ -1,3 +1,9 @@
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <%= f.input :description %>
+  <%= f.input :owner, collection: Offer.owners %>
+  <%= f.submit %>
+<% end %>
+
 <% @offers.each do |offer| %>
   <h2>
     <%= offer.name %> <em>with <%= offer.owner.full_name %></em>
