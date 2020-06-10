@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy, foreign_key: :customer
 
   # Scopes
-  scope :owner, -> { User.where(id: Offer.select(:owner_id).distinct) }
+  scope :owners, -> { User.where(id: Offer.select(:owner_id).distinct) }
 
   # Methods
   def full_name
