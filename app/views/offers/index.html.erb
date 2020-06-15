@@ -1,7 +1,7 @@
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <%= f.input :description %>
   <%= f.input :owner, collection: User.owners %>
-  <%= f.submit %>
+  <%= f.submit "Search" %>
 <% end %>
 
 <% @offers.each do |offer| %>
