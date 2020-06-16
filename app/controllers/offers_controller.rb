@@ -8,6 +8,6 @@ class OffersController < ApplicationController
 
   def search
     search = params[:search]
-    @offers = @offers.where(description: search[:description]) if search[:description].present?
+    @offers = @offers.where('name @@ :name', name: "%#{search[:name]}%") if search[:name].present?
   end
 end
