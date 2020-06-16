@@ -1,6 +1,6 @@
-# DEMO
+# GOAL
 
-This is a demo to show-case how can we rename references in a rails app.
+This is a demo to show-case how to implement searching with ( and without ) the [pg_search gem](https://github.com/Casecommons/pg_search).
 
 ## Schema
 This is the schema
