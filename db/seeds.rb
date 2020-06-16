@@ -11,6 +11,8 @@ Offer.create! name: 'Jedi training', description: Faker::Movies::StarWars.wookie
 # Create another user
 User.create! first_name: 'Leia', last_name: 'Organa', address: 'Alderaan', phone_number: '123456789'
 
+# Create an offer for Leia
+Offer.create! name: 'Flying in space', description: Faker::Movies::StarWars.wookiee_sentence, owner: User.last
 # Create a booking
 Booking.create! start_on: '2020-05-23', end_on: '2020-05-30', customer: User.last, offer: Offer.first
 
