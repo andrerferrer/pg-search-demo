@@ -1,6 +1,6 @@
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <%= f.input :name, required: false %>
-  <%= f.input :owner, collection: @owners_names.zip(@owners_ids), required: false %>
+  <%= f.input :owner, collection: @owners_names, required: false %>
   <%= f.submit "Search" %>
 <% end %>
 
