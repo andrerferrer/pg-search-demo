@@ -2,6 +2,8 @@
 
 This is a demo to show-case how to implement searching with ( and without ) the [pg_search gem](https://github.com/Casecommons/pg_search).
 
+[You can also check my other demos](https://github.com/andrerferrer/dedemos/blob/master/README.md#ded%C3%A9mos).
+
 ## Schema
 This is the schema
 
