@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OffersController < ApplicationController
   def index
     @offers = Offer.all
@@ -16,9 +18,9 @@ class OffersController < ApplicationController
       user = User.find search[:owner]
       @offers = @offers.joins(:owner)
                        .where(users: {
-                         first_name: user.first_name,
-                         last_name: user.last_name
-                       })
+                                first_name: user.first_name,
+                                last_name: user.last_name
+                              })
     end
   end
 end
