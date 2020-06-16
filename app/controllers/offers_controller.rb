@@ -13,14 +13,7 @@ class OffersController < ApplicationController
 
   def search
     search = params[:search]
-    @offers = @offers.where('name @@ :name', name: "%#{search[:name]}%") if search[:name].present?
-    if search[:owner].present?
-      user = User.find search[:owner]
-      @offers = @offers.joins(:owner)
-                       .where(users: {
-                                first_name: user.first_name,
-                                last_name: user.last_name
-                              })
-    end
+    @offers = @offers.search_by_name_and_description(search[:name]) if search[:name].present?
+    @offers = @offers.search_by_owner(search[:owner]) if search[:owner].present?
   end
 end
