@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_05_23_142052) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
     t.date "start_on"
     t.date "end_on"
-    t.integer "customer_id", null: false
-    t.integer "offer_id", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "offer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_142052) do
   create_table "offers", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "owner_id", null: false
+    t.bigint "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_id"], name: "index_offers_on_owner_id"
